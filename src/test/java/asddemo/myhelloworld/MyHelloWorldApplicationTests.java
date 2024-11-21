@@ -1,13 +1,13 @@
-package asddemo.helloworld;
+package asddemo.myhelloworld;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HelloWorldApplicationTests {
+class MyHelloWorldApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
