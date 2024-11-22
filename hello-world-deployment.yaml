@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-deployment
+  namespace: asd-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-world-app
+  template:
+    metadata:
+      labels:
+        app: hello-world-app
+    spec:
+      containers:
+      - name: hello-world-container
+        image: asddemoreg.azurecr.io/samples/hello-world:0.0.1
+        imagePullPolicy: Always
+        ports:
+          - name: web
+            containerPort: 5000
+# service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-svc
+spec:
+  selector:
+    app: hello-world-app
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: LoadBalancer
