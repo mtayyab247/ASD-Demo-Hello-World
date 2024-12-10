@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: hello-world-container
-        image: asddemoreg.azurecr.io/samples/hello-world:0.0.1
+        image: asddemoregistry.azurecr.io/samples/hello-world:latest
         imagePullPolicy: Always
         ports:
           - name: web
